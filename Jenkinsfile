@@ -46,8 +46,7 @@ pipeline {
             steps {
                 echo 'Test Stage'
                 sh '''
-                    npm install -g serve
-                    serve -s build
+                    npx serve -s build &
                     npx playwright test
                 '''
             }
