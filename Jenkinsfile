@@ -39,6 +39,7 @@ pipeline {
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.55.0-noble'
+                    args '-u root --ipc=host'
                     reuseNode true
                 }
             }
