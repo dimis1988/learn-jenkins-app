@@ -1,2 +1,2 @@
 FROM node:18-alpine
-RUN npm install -g netlify-cli@20.1.1
+RUN npm install -g netlify-cli@20.1.1 serve
