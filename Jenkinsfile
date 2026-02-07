@@ -16,6 +16,7 @@ pipeline {
             }
             steps {
                 sh '''
+                    echo "lets see github logs..."
                     ls -la
                     node --version
                     npm --version
