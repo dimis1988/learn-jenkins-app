@@ -77,13 +77,12 @@ pipeline {
         stage('Deploy Staging') {
             agent {
                 docker {
-                    image 'node:18-alpine'
+                    image 'my-dockerfile'
                     reuseNode true
                 }    
             }
             steps {
                 sh '''
-                    npm install -g netlify-cli
                     netlify --version
                     echo "Deploying to staging... Site: ID: $NETLIFY_SITE_ID"
                     netlify status
@@ -95,13 +94,12 @@ pipeline {
         stage('Deploy Production') {
             agent {
                 docker {
-                    image 'node:18-alpine'
+                    image 'my-dockerfile'
                     reuseNode true
                 }    
             }
             steps {
                 sh '''
-                    npm install -g netlify-cli
                     netlify --version
                     echo "Deploying... Site: ID: $NETLIFY_SITE_ID"
                     netlify status
@@ -109,5 +107,6 @@ pipeline {
                 '''
             }
         }
+
     }
 }
